@@ -23,7 +23,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Header & Navigation */
 .header {
   position: fixed;
   top: 0;
@@ -97,11 +96,9 @@ body {
   cursor: pointer;
 }
 
-/* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f4f4f4" width="1200" height="800"/><text x="50%" y="50%" text-anchor="middle" font-family="Arial" font-size="24" fill="%23999">Imagen del restaurante - Ambiente elegante</text></svg>');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/hero_background.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -230,7 +227,7 @@ body {
 }
 
 .about-image {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400"><rect fill="%23e8e8e8" width="500" height="400"/><text x="50%" y="50%" text-anchor="middle" font-family="Arial" font-size="16" fill="%23999">Chef preparando platos</text></svg>');
+  background: url("../images/chef_working.jpg");
   background-size: cover;
   background-position: center;
   height: 400px;
