@@ -8,10 +8,6 @@
       content="Enjoy a unique gastronomic experience at Restaurant Demo. Varied menu, cozy atmosphere, and easy online reservations. We look forward to delighting your senses!" />
     <meta name="keywords" content="restaurant, food, dining, reservations, delivery, gastronomy" />
     <title>Restaurant Demo | Authentic Dining Experience</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -29,7 +25,7 @@
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="mobile-menu">
+        <button class="mobile-menu" aria-label="Open menu">
           <i class="fas fa-bars"></i>
         </button>
       </nav>
@@ -194,23 +190,39 @@
         <div class="container">
           <h2 class="section-title">Gallery</h2>
           <div class="gallery-grid">
-            <div class="gallery-item" onclick="openModal(this)">
-              <img src="assets/images/paella_valenciana.jpg" alt="Paella" />
+            <div class="gallery-item">
+              <img src="assets/images/paella_valenciana.webp" alt="Paella" width="350" height="486" loading="lazy" />
+              />
             </div>
-            <div class="gallery-item" onclick="openModal(this)">
-              <img src="assets/images/interior_side.jpg" alt="Restaurant interior" />
+            <div class="gallery-item">
+              <img
+                src="assets/images/interior_side.webp"
+                alt="Restaurant interior"
+                width="350"
+                height="486"
+                loading="lazy" />
+              />
             </div>
-            <div class="gallery-item" onclick="openModal(this)">
-              <img src="assets/images/chef_marco.jpg" alt="Chef Marco Rossi" />
+            <div class="gallery-item">
+              <img src="assets/images/chef_marco.webp" alt="Chef Marco Rossi" width="350" height="486" loading="lazy" />
+              />
             </div>
-            <div class="gallery-item" onclick="openModal(this)">
-              <img src="assets/images/exterior_side.jpg" alt="Restaurant exterior" />
+            <div class="gallery-item">
+              <img
+                src="assets/images/exterior_side.webp"
+                alt="Restaurant exterior"
+                width="350"
+                height="486"
+                loading="lazy" />
+              />
             </div>
-            <div class="gallery-item" onclick="openModal(this)">
-              <img src="assets/images/rissotto.jpg" alt="Risotto" />
+            <div class="gallery-item">
+              <img src="assets/images/rissotto.webp" alt="Risotto" width="350" height="486" loading="lazy" />
+              />
             </div>
-            <div class="gallery-item" onclick="openModal(this)">
-              <img src="assets/images/private_event.jpg" alt="Private event" />
+            <div class="gallery-item">
+              <img src="assets/images/private_event.webp" alt="Private event" width="350" height="486" loading="lazy" />
+              />
             </div>
           </div>
         </div>
@@ -375,17 +387,17 @@
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>Restaurant Demo</h3>
+          <h3 class="white-text">Restaurant Demo</h3>
           <p>Authentic dining experience since 1990. A perfect place to enjoy flavors from around the world.</p>
           <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Tripadvisor"><i class="fab fa-tripadvisor"></i></a>
           </div>
         </div>
         <div class="footer-section">
-          <h3>Opening Hours</h3>
+          <h3 class="white-text">Opening Hours</h3>
           <p>
             <strong>Tue–Thu:</strong>
             6:00 PM – 10:00 PM
@@ -404,7 +416,7 @@
           </p>
         </div>
         <div class="footer-section">
-          <h3>Quick Contact</h3>
+          <h3 class="white-text">Quick Contact</h3>
           <p>
             <i class="fas fa-phone"></i>
             +1 234 567 890
@@ -423,12 +435,6 @@
         <p>&copy; 2025 Restaurant Demo. Created by Lorenzo Drovandi</p>
       </div>
     </footer>
-
-    <div id="imageModal" class="modal" onclick="closeModal()">
-      <span class="close-modal">&times;</span>
-      <img class="modal-content" id="modalImage" />
-    </div>
-
     <script src="assets/js/main.js" type="module"></script>
   </body>
 </html>
