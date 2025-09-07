@@ -171,7 +171,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Sections */
 .section {
   padding: 5rem 2rem;
 }
@@ -201,7 +200,6 @@ body {
   background: var(--primary-color);
 }
 
-/* About Section */
 .about {
   background: var(--light-bg);
 }
@@ -235,7 +233,6 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Menu Section */
 .menu-categories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -665,4 +662,40 @@ html {
   color: white;
   font-size: 40px;
   cursor: pointer;
+}
+
+#div-items {
+  margin-top: 2rem;
+}
+
+#h4-subtitle {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+#item-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#h3-reservation {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+#div-date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.item {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+.submit {
+  width: 100%;
+  justify-content: center;
 }
