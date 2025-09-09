@@ -1,68 +1,36 @@
-// Mobile menu toggle
-document.querySelector(".mobile-menu").addEventListener("click", function () {
-  const navLinks = document.querySelector(".nav-links");
-  navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
-});
+import { initMobileMenu } from "../js/modules/menuManager.js";
+import { initSmoothScroll } from "../js/modules/smoothScroll.js";
+import { initNavShadow } from "../js/modules/navShadow.js";
+import { initScrollAnimation } from "../js/modules/scrollAnimation.js";
+import { initToggleMobileNav } from "../js/modules/toggleMobileNav.js";
+import { getFormData } from "../js/modules/FormDataService.js";
+import { sendReservation } from "../js/modules/ReservationService.js";
+import { showMessage } from "../js/modules/UIHandler.js";
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  });
-});
+const menuButton = document.querySelector(".mobile-menu");
+const navLinks = document.querySelector(".nav-links");
+const anchors = document.querySelectorAll('a[href^="#"]');
+const header = document.querySelector(".header");
+const animatedElements = document.querySelectorAll(".menu-category, .review-card, .gallery-item");
 
-// Header scroll effect
-window.addEventListener("scroll", function () {
-  const header = document.querySelector(".header");
-  if (window.scrollY > 100) {
-    header.style.background = "rgba(255, 255, 255, 0.98)";
-    header.style.boxShadow = "0 2px 20px rgba(0,0,0,0.1)";
-  } else {
-    header.style.background = "rgba(255, 255, 255, 0.95)";
-    header.style.boxShadow = "none";
-  }
-});
+initMobileMenu(menuButton, navLinks);
+initSmoothScroll(anchors);
+initNavShadow(header);
+initScrollAnimation(animatedElements);
+initToggleMobileNav(navLinks, 768);
 
-// Animation on scroll
-function animateOnScroll() {
-  const elements = document.querySelectorAll(".menu-category, .review-card, .gallery-item");
+const form = document.getElementById("reservationForm");
 
-  elements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
-    const elementVisible = 150;
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = getFormData(form);
 
-    if (elementTop < window.innerHeight - elementVisible) {
-      element.style.opacity = "1";
-      element.style.transform = "translateY(0)";
-    }
-  });
-}
-
-// Initialize animations
-document.addEventListener("DOMContentLoaded", function () {
-  const elements = document.querySelectorAll(".menu-category, .review-card, .gallery-item");
-  elements.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(30px)";
-    element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  });
-});
-
-window.addEventListener("scroll", animateOnScroll);
-
-// Responsive navigation
-window.addEventListener("resize", function () {
-  const navLinks = document.querySelector(".nav-links");
-  if (window.innerWidth > 768) {
-    navLinks.style.display = "flex";
-  } else {
-    navLinks.style.display = "none";
+  try {
+    const res = await sendReservation(data);
+    showMessage(res.message);
+    form.reset();
+  } catch (err) {
+    showMessage("Hubo un error enviando la reserva.");
+    console.error(err);
   }
 });
