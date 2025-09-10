@@ -4,7 +4,7 @@ export function initReservationForm() {
 
   if (!form) return;
 
-  emailjs.init(import.meta.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  emailjs.init("SbCCV7okgZsFUvVFK");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -21,7 +21,7 @@ export function initReservationForm() {
     };
 
     emailjs
-      .send(import.meta.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, import.meta.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, formData)
+      .send("service_m3vrqen", "template_jazlfbc", formData)
       .then(() => {
         messageDiv.textContent = "✅ Your reservation request has been sent successfully!";
         form.reset();
