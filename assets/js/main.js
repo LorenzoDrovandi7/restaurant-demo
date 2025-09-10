@@ -16,4 +16,7 @@ initSmoothScroll(anchors);
 initNavShadow(header);
 initScrollAnimation(animatedElements);
 initToggleMobileNav(navLinks, 768);
-initReservationForm();
+
+document.addEventListener("DOMContentLoaded", () => {
+  initReservationForm();
+});

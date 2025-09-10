@@ -1,10 +1,10 @@
-import emailjs from "@emailjs/browser";
-
 export function initReservationForm() {
   const form = document.getElementById("reservationForm");
   const messageDiv = document.getElementById("reservationMessage");
 
   if (!form) return;
+
+  emailjs.init("SbCCV7okgZsFUvVFK");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -21,7 +21,7 @@ export function initReservationForm() {
     };
 
     emailjs
-      .send(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, formData, process.env.EMAILJS_PUBLIC_KEY)
+      .send("service_m3vrqen", "template_jazlfbc", formData)
       .then(() => {
         messageDiv.textContent = "✅ Your reservation request has been sent successfully!";
         form.reset();
