@@ -18,19 +18,3 @@ initSmoothScroll(anchors);
 initNavShadow(header);
 initScrollAnimation(animatedElements);
 initToggleMobileNav(navLinks, 768);
-
-const form = document.getElementById("reservationForm");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const data = getFormData(form);
-
-  try {
-    const res = await sendReservation(data);
-    showMessage(res.message);
-    form.reset();
-  } catch (err) {
-    showMessage("Hubo un error enviando la reserva.");
-    console.error(err);
-  }
-});
