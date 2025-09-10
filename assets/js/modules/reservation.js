@@ -1,5 +1,3 @@
-import emailjs from "@emailjs/browser";
-
 export function initReservationForm() {
   const form = document.getElementById("reservationForm");
   const messageDiv = document.getElementById("reservationMessage");
