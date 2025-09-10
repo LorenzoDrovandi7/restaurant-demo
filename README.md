@@ -1,2 +1,2 @@
-# plantilla-restaurante
-Landing page para restaurantes.
+# restaurant-demo
+Landing page for restaurants.
