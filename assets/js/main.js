@@ -3,9 +3,6 @@ import { initSmoothScroll } from "../js/modules/smoothScroll.js";
 import { initNavShadow } from "../js/modules/navShadow.js";
 import { initScrollAnimation } from "../js/modules/scrollAnimation.js";
 import { initToggleMobileNav } from "../js/modules/toggleMobileNav.js";
-import { getFormData } from "../js/modules/FormDataService.js";
-import { sendReservation } from "../js/modules/ReservationService.js";
-import { showMessage } from "../js/modules/UIHandler.js";
 
 const menuButton = document.querySelector(".mobile-menu");
 const navLinks = document.querySelector(".nav-links");
