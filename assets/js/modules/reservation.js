@@ -1,8 +1,10 @@
 import emailjs from "@emailjs/browser";
 
-document.addEventListener("DOMContentLoaded", () => {
+export function initReservationForm() {
   const form = document.getElementById("reservationForm");
   const messageDiv = document.getElementById("reservationMessage");
+
+  if (!form) return;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -29,4 +31,4 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = "❌ Something went wrong. Please try again later.";
       });
   });
-});
+}

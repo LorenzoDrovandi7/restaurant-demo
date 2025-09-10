@@ -3,6 +3,7 @@ import { initSmoothScroll } from "../js/modules/smoothScroll.js";
 import { initNavShadow } from "../js/modules/navShadow.js";
 import { initScrollAnimation } from "../js/modules/scrollAnimation.js";
 import { initToggleMobileNav } from "../js/modules/toggleMobileNav.js";
+import { initReservationForm } from "../js/modules/reservation.js";
 
 const menuButton = document.querySelector(".mobile-menu");
 const navLinks = document.querySelector(".nav-links");
@@ -15,3 +16,4 @@ initSmoothScroll(anchors);
 initNavShadow(header);
 initScrollAnimation(animatedElements);
 initToggleMobileNav(navLinks, 768);
+initReservationForm();
